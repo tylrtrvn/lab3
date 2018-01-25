@@ -23,12 +23,12 @@ function initializePage() {
 	$("a.thumbnail").click(projectClick); // Listens to clicks on project <a> elements in HTML file
 }
 function projectClick(e) {
-	// Prevent the page from reloading
+	// Prevent the page from reloading when clicking on an objects
 	e.preventDefault();
 
 	// In an event handler, $(this) refers to
 	// the object that triggered the event
-	$(this).css("background-color", "#B8ABA5");
+	$(this).css("background-color", "#B0A0A6");
 
 
 	// These lines of code will just append the description of the project underneath
@@ -36,7 +36,7 @@ function projectClick(e) {
 	// var containingProject = $(this).closest(".project");
 	// containingProject.append("<div class='project-description'><p>Description of the project.</p></div>");
 
-	// This will replace instead of append description.
+	// This will replace description instead of append it
 	var containingProject = $(this).closest(".project");
 	var description = $(containingProject).find(".project-description");
 
@@ -45,7 +45,7 @@ function projectClick(e) {
 	}
 	else {
 		 //description.html("<p>You already clicked at " + (new Date()) + "</p>");
-		$(containingProject).fadeToggle(".project-description");
+		$(description).fadeToggle(".project-description");
 	}
 
 
